@@ -14,6 +14,7 @@ void push(stack *sp, char address_string[N])
 {
 	//Φτιάχνουμε έναν δείκτη σε δομή StackNode και κάνουμε δεύσμευση της μνήμης που θα χρειαστεί
 	stack new_node = (stack)malloc(sizeof(struct StackNode));
+	
 	//Αμυντικός προγραμματισμός σε περίπτωση αδυναμίας δεύσμευσης μνήμης
 	if(!new_node)
 	{
@@ -49,6 +50,7 @@ int pop (stack *sp, char address[N])
 	return 0;
 }
 
+
 void empty_stack(stack *sp)
 {
 	//Φτιάχνουμε 2 δείκτες για τον παρόν και προηγούμενο κόμβο
@@ -73,6 +75,8 @@ void empty_stack(stack *sp)
 	*sp = NULL;
 }
 
+
+
 void print_stack (stack sp)
 {
 	//temporary δεικτης σε δομη StackNode, και ανάθεση να δείχνει όπου και το head
@@ -81,7 +85,7 @@ void print_stack (stack sp)
 	
 	//Τύπωμα αναλόγως αν δεν υπάρχουν στοιχεία
 	if(current == NULL)
-		printf("\nΔεν υπάρχουν διευθύνσεις.");
+		printf("\nΔεν υπάρχουν διευθύνσεις.");	
 	else//Τύπωμα μέχρι το current να δειχνει σε NULL
 	{
 		while(current != NULL)
@@ -97,7 +101,7 @@ int main() {
 	int choice;
 	char address[N];
 	stack s1 = NULL;           
-	stack s2 = NULL;                   
+	stack s2 = NULL;         
 	system("chcp 1253>nul");
 	do{
         printf("\nΔιαθέσιμες Επιλογές:\n");
